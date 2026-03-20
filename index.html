@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <head>
   <link rel="icon" href="data:,">
-  <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.1/dist/es-module-shims.js"></script>
   
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@^0.182.0/build/three.module.min.js"
-    }
-  }
+  <script type="module">
+    import 'https://cdn.jsdelivr.net/npm/@google/model-viewer@3.4.0';
+    import 'https://cdn.jsdelivr.net/npm/@google/model-viewer-effects@3.4.0';
   </script>
-  
- <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer-module.min.js"></script>
- <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer-effects@3.5.0/dist/model-viewer-effects.min.js"></script>
   
   <style>
     body { margin: 100; overflow: hidden; }
@@ -41,10 +34,10 @@
     const modelViewer = document.querySelector('#paused-change');
     console.log(modelViewer.availableAnimations);
 
-    self.setInterval(() => {
-        modelViewer.animationName = modelViewer.animationName === 'Action1' ?
-        'Action2' : 'Action1';
-    }, 3333.0);
+    setInterval(() => {
+      modelViewer.animationName =
+        modelViewer.animationName === 'Action1' ? 'Action2' : 'Action1';
+  }, 3333);
     })();
 </script>
 
